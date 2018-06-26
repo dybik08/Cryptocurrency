@@ -1,21 +1,74 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './style/App.css';
+import {connect} from 'react-redux';
+
+import {fetchCurrency} from "./actions/fetch_currency_pair_data";
+
+import CurrencyPair from './components/currency_pair';
 
 class App extends Component {
+
   render() {
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ul className="list-group">
+            Cryptocurrency pairs:
+            <li className="list-group-item">
+                <CurrencyPair name={'BTC/USD'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'DASH/USD'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'DASH/BTC'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'ETC/USD'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'ETC/BTC'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'ETH/USD'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'ETH/BTC'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'LTC/USD'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'LTC/BTC'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'XMR/USD'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'XMR/BTC'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'ZEC/UTC'}/>
+            </li>
+            <li className="list-group-item">
+                <CurrencyPair name={'ZEC/BTC'}/>
+            </li>
+        </ul>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps({ currencyPair }){
+
+    return {
+        currencyPair,
+    };
+}
+function mapDispatchToProps(dispatch){
+    return {
+        fetchCurrency: currencyPair => dispatch(fetchCurrency(currencyPair))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
