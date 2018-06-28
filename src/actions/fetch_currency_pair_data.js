@@ -1,15 +1,15 @@
-import axios from 'axios';
+import data from "../tickers";
 
 
 export const FETCH_CURRENCY = 'FETCH_CURRENCY';
 
 
-export function fetchCurrency(currencyPair) {
-    const url = 'https://api.bitfinex.com/v1/pubticker/'+currencyPair;
-    const response = axios.get(url);
+export function fetchCurrency() {
+    const cryptoData = data;
+
 
     return {
-        payload: response,
+        cryptoData,
         type: FETCH_CURRENCY,
     };
 }
