@@ -9,7 +9,7 @@ export default(props) => {
 
     return (
         <div>
-            <Link className="btn btn-primary" onClick={onPairClick.bind(this, props.pair)} to={`/pair/${props.pair}`}>
+            <Link className="btn btn-success" onClick={onPairClick.bind(this, props.pair)} to={`/pair/${props.pair}`}>
                 {props.name}
             </Link>
         </div>
