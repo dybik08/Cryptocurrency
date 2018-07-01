@@ -6,6 +6,7 @@ import {fetchCurrency} from "./actions/fetch_currency_pair_data";
 import CurrencyPair from './components/currency_pair';
 import $ from "jquery";
 import { Btc,Dash,Etc,Eth,Ltc,Xmr,Zec } from 'react-cryptocoins';
+import Particles from 'react-particles-js';
 
 class App extends Component {
     componentDidMount(){
@@ -22,6 +23,8 @@ class App extends Component {
 
   render() {
       return (
+    <div>
+        <Particles className="particles"/>
       <div className="App" >
         <ul className="list-group col-md-2 rolldown-list" id="myList">
             <h1>Cryptocurrency pairs:</h1>
@@ -38,40 +41,74 @@ class App extends Component {
                 </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'DASH/BTC'} pair={"dashbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Dash color="blue" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'DASH/BTC'} pair={"dashbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'ETC/USD'} pair={"etcusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Etc color="green" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'ETC/USD'} pair={"etcusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'ETC/BTC'} pair={"etcbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Etc color="green" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'ETC/BTC'} pair={"etcbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'ETH/USD'} pair={"ethusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Eth color="blue" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'ETH/USD'} pair={"ethusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'ETH/BTC'} pair={"ethbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Eth color="blue" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'ETH/BTC'} pair={"ethbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'LTC/USD'} pair={"ltcusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Ltc color="grey" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'LTC/USD'} pair={"ltcusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'LTC/BTC'} pair={"ltcbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Ltc color="grey" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'LTC/BTC'} pair={"ltcbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'XMR/USD'} pair={"xmrusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Xmr color="orange" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'XMR/USD'} pair={"xmrusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'XMR/BTC'} pair={"xmrbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Xmr color="orange" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'XMR/BTC'} pair={"xmrbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'ZEC/USD'} pair={"zecusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Zec color="gold" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'ZEC/USD'} pair={"zecusd"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
             <li className="list-group-item">
-                <CurrencyPair name={'ZEC/BTC'} pair={"zecbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                <div className="row" id="rootListItem">
+                    <Zec color="gold" className="iconLogoList" size={30} />
+                    <CurrencyPair name={'ZEC/BTC'} pair={"zecbtc"} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)} />
+                </div>
             </li>
         </ul>
       </div>
+    </div>
     );
   }
 }

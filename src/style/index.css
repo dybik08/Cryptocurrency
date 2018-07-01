@@ -12,6 +12,7 @@ body {
 .pairName {
   margin-top: 50px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 #particles-js {
@@ -85,3 +86,17 @@ h1{
   margin-right: 10px;
 }
 
+.currencyPairDetail{
+  background-color: #043927;
+  color: #fff;
+  border-color: white;
+}
+
+.float-right{
+  color: #fff;
+}
+
+canvas {
+  position: fixed;
+  z-index: -10;
+}

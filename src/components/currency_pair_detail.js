@@ -4,78 +4,87 @@ import {fetchCurrency} from "../actions/fetch_currency_pair_data";
 import { Link } from 'react-router-dom';
 import data from "../tickers";
 import { Btc,Dash,Etc,Eth,Ltc,Xmr,Zec } from 'react-cryptocoins';
-
+import $ from "jquery";
+import Particles from 'react-particles-js';
 
 
 class CurrencyPairDetail extends Component {
     componentDidMount(){
         this.props.fetchCurrency();
+        $('.rolldown-list li').each(function () {
+            let delay = ($(this).index() / 4) + 's';
+            $(this).css({
+                webkitAnimationDelay: delay,
+                mozAnimationDelay: delay,
+                animationDelay: delay
+            });
+        });
     }
     renderPairData = () => {
         let pair = this.props.match.params.pair;
         switch (pair) {
             case "btcusd":
                 return data.btcusd.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "dashusd":
                 return data.dashusd.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "dashbtc":
                 return data.dashbtc.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "etcusd":
                 return data.etcusd.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
             case "etcbtc":
                 return data.etcbtc.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "ethusd":
                 return data.ethusd.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "ethbtc":
                 return data.ethbtc.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "ltcusd":
                 return data.ltcusd.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "ltcbtc":
                 return data.ltcbtc.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "xmrusd":
                 return data.xmrusd.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "xmrbtc":
                 return data.xmrbtc.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "zecusd":
                 return data.zecusd.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
             case "zecbtc":
                 return data.zecbtc.map((value) =>
-                    <li className="list-group-item">{value}</li>
+                    <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
 
@@ -213,24 +222,26 @@ class CurrencyPairDetail extends Component {
 
 
     render(){
-        console.log("renderPairName: ", this.renderPairName())
         return(
             <div>
                 <div>
                     <Link className="float-right" to="/">Back to index</Link>
                 </div>
+                <Particles className="particles"/>
                 {this.renderPairName()}
-                <div className="row text-center">
-                    <ul className="list-group col-md-3">
-                        <li className="list-group-item">Bid:</li>
-                        <li className="list-group-item">Bid size:</li>
-                        <li className="list-group-item">Ask:</li>
-                        <li className="list-group-item">Ask size:</li>
-                        <li className="list-group-item">Daily change:</li>
-                        <li className="list-group-item">Last price:</li>
-                        <li className="list-group-item">Volume 24h:</li>
-                        <li className="list-group-item">High:</li>
-                        <li className="list-group-item">Low:</li>
+                <div className="row text-center ">
+
+                    <ul className="list-group col-md-2 ">
+
+                        <li className="list-group-item currencyPairDetail">Bid:</li>
+                        <li className="list-group-item currencyPairDetail">Bid size:</li>
+                        <li className="list-group-item currencyPairDetail">Ask:</li>
+                        <li className="list-group-item currencyPairDetail">Ask size:</li>
+                        <li className="list-group-item currencyPairDetail">Daily change:</li>
+                        <li className="list-group-item currencyPairDetail">Last price:</li>
+                        <li className="list-group-item currencyPairDetail">Volume 24h:</li>
+                        <li className="list-group-item currencyPairDetail">High:</li>
+                        <li className="list-group-item currencyPairDetail">Low:</li>
                     </ul>
                     <ul className="list-group col-md-3">
                         {this.renderPairData()}
