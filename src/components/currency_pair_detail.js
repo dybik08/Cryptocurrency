@@ -86,8 +86,6 @@ class CurrencyPairDetail extends Component {
                 return data.zecbtc.map((value) =>
                     <li className="list-group-item currencyPairDetail">{value}</li>
                 );
-
-
             default:
                 return "Error! No data available!";
         }
@@ -230,9 +228,7 @@ class CurrencyPairDetail extends Component {
                 <Particles className="particles"/>
                 {this.renderPairName()}
                 <div className="row text-center ">
-
                     <ul className="list-group col-md-2 ">
-
                         <li className="list-group-item currencyPairDetail">Bid:</li>
                         <li className="list-group-item currencyPairDetail">Bid size:</li>
                         <li className="list-group-item currencyPairDetail">Ask:</li>
