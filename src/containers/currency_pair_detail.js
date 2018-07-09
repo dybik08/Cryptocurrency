@@ -28,13 +28,13 @@ class CurrencyPairDetail extends Component {
                     <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
-            case "dashusd":
-                return data.dashusd.map((value) =>
+            case "dshusd":
+                return data.dshusd.map((value) =>
                     <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
-            case "dashbtc":
-                return data.dashbtc.map((value) =>
+            case "dshbtc":
+                return data.dshbtc.map((value) =>
                     <li className="list-group-item currencyPairDetail">{value}</li>
                 );
 
@@ -104,7 +104,7 @@ class CurrencyPairDetail extends Component {
                     </div>
                 );
 
-            case "dashusd":
+            case "dshusd":
                 pairName = "DASH/USD";
                 return (
                     <div className="text-center col-md-6 row pairName">
@@ -113,7 +113,7 @@ class CurrencyPairDetail extends Component {
                     </div>
                 );
 
-            case "dashbtc":
+            case "dshbtc":
                 pairName = "DASH/BTC";
                 return (
                     <div className="text-center col-md-6 row pairName">

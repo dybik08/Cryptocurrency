@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/index.css';
 import App from './App';
-import CurrencyPairDetail from './components/currency_pair_detail';
+import CurrencyPairDetail from './containers/currency_pair_detail';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
