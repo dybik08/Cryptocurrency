@@ -104,4 +104,9 @@ canvas {
 .btn-success{
   width: 110px;
   height: auto;
+  justify-content: center;
+}
+
+.logo{
+  margin-left: 10%;
 }
