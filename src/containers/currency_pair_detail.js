@@ -4,7 +4,7 @@ import {fetchCurrency} from "../actions/fetch_currency_pair_data";
 import { Link } from 'react-router-dom';
 import $ from "jquery";
 import Particles from 'react-particles-js';
-import showCurrencyValue from '../customJS/show_currency_value'
+import showCurrencyValue from '../customJS/render_pair_data'
 import renderPairName from '../customJS/render_pair_name'
 
 
