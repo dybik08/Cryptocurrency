@@ -26,10 +26,10 @@ class App extends Component {
   renderCurrencyPairList = (symbol) => {
       const name = symbol.toUpperCase();
       return (
-          <li className="list-group-item ">
+          <li className="list-group-item " key={symbol} >
             <div className="row" id="rootListItem">
                 {iconChooser(symbol)}
-                <CurrencyPair name={name} pair={symbol} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)}  />
+                <CurrencyPair name={name} pair={symbol}  pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)}  />
             </div>
           </li>
       );
