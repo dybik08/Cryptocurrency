@@ -42,7 +42,7 @@ class App extends Component {
         <Particles className="particles"/>
       <div className="App" >
           <h1>Cryptocurrency pairs:</h1>
-        <ul className="list-group col-md-2 rolldown-list" id="myList">
+        <ul className="list-group col-md-4 rolldown-list" id="myList">
             {sortedSymbols.map(this.renderCurrencyPairList)}
         </ul>
       </div>
