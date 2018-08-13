@@ -26,10 +26,10 @@ class App extends Component {
   renderCurrencyPairList = (symbol) => {
       const name = symbol.toUpperCase();
       return (
-          <li className="list-group-item ">
+          <li className="list-group-item " key={symbol} >
             <div className="row" id="rootListItem">
                 {iconChooser(symbol)}
-                <CurrencyPair name={name} pair={symbol} pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)}  />
+                <CurrencyPair name={name} pair={symbol}  pickedCurrencyPair={this.props.pickedCurrencyPair.bind(this)}  />
             </div>
           </li>
       );
@@ -42,7 +42,7 @@ class App extends Component {
         <Particles className="particles"/>
       <div className="App" >
           <h1>Cryptocurrency pairs:</h1>
-        <ul className="list-group col-md-2 rolldown-list" id="myList">
+        <ul className="list-group col-md-4 rolldown-list" id="myList">
             {sortedSymbols.map(this.renderCurrencyPairList)}
         </ul>
       </div>

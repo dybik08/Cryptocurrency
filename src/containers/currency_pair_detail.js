@@ -31,7 +31,7 @@ class CurrencyPairDetail extends Component {
                 <Particles className="particles"/>
                 {renderPairName(pair)}
                 <div className="row text-center ">
-                    <ul className="list-group col-md-2 ">
+                    <ul className="list-group col-md-3 col-sm-4 col-lg-2 col-6 ">
                         <li className="list-group-item currencyPairDetail">Bid:</li>
                         <li className="list-group-item currencyPairDetail">Bid size:</li>
                         <li className="list-group-item currencyPairDetail">Ask:</li>
@@ -42,7 +42,7 @@ class CurrencyPairDetail extends Component {
                         <li className="list-group-item currencyPairDetail">High:</li>
                         <li className="list-group-item currencyPairDetail">Low:</li>
                     </ul>
-                    <ul className="list-group col-md-3">
+                    <ul className="list-group col-md-5 col-sm-6 col-lg-3 col-6">
                         {showCurrencyValue(pair)}
                     </ul>
                 </div>
