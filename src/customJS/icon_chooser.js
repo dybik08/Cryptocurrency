@@ -1,77 +1,22 @@
-import * as Icon from 'react-cryptocoins';
 import React from 'react';
 
+export default function(pair){
 
+    let CryptoIcon;
+    let pairName = {};
 
-export default function(pairName){
+    if (pair !== 'dashbtc' && pair !== 'dashusd'){
+        CryptoIcon = require(`react-cryptocoins/dist/icons/${(pair.substring(0,3)).toUpperCase()}`);
+    }else {
+        CryptoIcon = require(`react-cryptocoins/dist/icons/${(pair.substring(0,4)).toUpperCase()}`);
+    }
 
-    const iconChooser = (pairName) => {
-        switch (pairName) {
-            case "btcusd":
+    const iconChooser = (pair) => {
+        switch (pair) {
+            case pair:
                 return (
-                    <Icon.Btc color="orange" className="iconLogoList" size={30} />
+                        <CryptoIcon.default className="iconLogo" size={30} />
                 );
-            case "dshusd":
-                return (
-                        <Icon.Dash color="blue" className="iconLogoList" size={30} />
-                );
-
-            case "dshbtc":
-                return (
-                        <Icon.Dash color="blue" className="iconLogoList" size={30} />
-                );
-
-            case "etcusd":
-                return (
-                        <Icon.Etc color="green" className="iconLogoList" size={30} />
-                );
-
-            case "etcbtc":
-                return (
-                        <Icon.Etc color="green" className="iconLogoList" size={30} />
-                );
-
-            case "ethusd":
-                return (
-                        <Icon.Eth color="blue" className="iconLogoList" size={30} />
-                );
-
-            case "ethbtc":
-                return (
-                        <Icon.Eth color="blue" className="iconLogoList" size={30} />
-                );
-
-            case "ltcusd":
-                return (
-                        <Icon.Ltc color="grey" className="iconLogoList" size={30} />
-                );
-
-            case "ltcbtc":
-                return (
-                        <Icon.Ltc color="grey" className="iconLogoList" size={30} />
-                );
-
-            case "xmrusd":
-                return (
-                        <Icon.Xmr color="orange" className="iconLogoList" size={30} />
-                );
-
-            case "xmrbtc":
-                return (
-                        <Icon.Xmr color="orange" className="iconLogoList" size={30} />
-                );
-
-            case "zecusd":
-                return (
-                        <Icon.Zec color="gold" className="iconLogoList" size={30} />
-            );
-
-            case "zecbtc":
-                return (
-                        <Icon.Zec color="gold" className="iconLogoList" size={30} />
-                );
-
-
             default:
                 return "Error! No data available!";
         }
