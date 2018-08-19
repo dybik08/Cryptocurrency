@@ -1,130 +1,30 @@
 import React from 'react';
-import * as Icon from 'react-cryptocoins';
-
-
 
 export default (pair) => {
-
+    let CryptoIcon;
     let pairName = {};
+
+    if (pair !== 'dashbtc' && pair !== 'dashusd'){
+        CryptoIcon = require(`react-cryptocoins/dist/icons/${(pair.substring(0,3)).toUpperCase()}`);
+    }else {
+        CryptoIcon = require(`react-cryptocoins/dist/icons/${(pair.substring(0,4)).toUpperCase()}`);
+    }
+    console.log(CryptoIcon)
+
     switch (pair) {
-        case "btcusd":
-            pairName = "BTC/USD";
+        case pair:
+            if (pair !== 'dashbtc' && pair !== 'dashusd'){
+                pairName = (pair.substring(0,3)+'/'+pair.substring(3,6)).toUpperCase();
+            }else {
+                pairName = (pair.substring(0,4)+'/'+pair.substring(4,7)).toUpperCase();
+            }
+
             return (
                 <div className="text-center col-md-6 row pairName">
-                    <Icon.Btc color="orange" className="iconLogo" />
+                    <CryptoIcon.default className="iconLogo" size={40} />
                     {pairName}
                 </div>
             );
-
-        case "dshusd":
-            pairName = "DASH/USD";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Dash color="blue" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "dshbtc":
-            pairName = "DASH/BTC";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Dash color="blue" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "etcusd":
-            pairName = "ETC/USD";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Etc color="green" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "etcbtc":
-            pairName = "ETC/BTC";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Etc color="green" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "ethusd":
-            pairName = "ETH/USD";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Eth color="blue" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "ethbtc":
-            pairName = "ETH/BTC";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Eth color="blue" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "ltcusd":
-            pairName = "LTC/USD";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Ltc color="grey" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "ltcbtc":
-            pairName = "LTC/BTC";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Ltc color="grey" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "xmrusd":
-            pairName = "XMR/USD";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Xmr color="orange" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "xmrbtc":
-            pairName = "XMR/BTC";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Xmr color="orange" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "zecusd":
-            pairName = "ZEC/USD";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Zec color="gold" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-        case "zecbtc":
-            pairName = "ZEC/BTC";
-            return (
-                <div className="text-center col-md-6 row pairName">
-                    <Icon.Zec color="gold" className="iconLogo" />
-                    {pairName}
-                </div>
-            );
-
-
         default:
             return "Error! No data available!";
     }

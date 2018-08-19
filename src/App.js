@@ -37,6 +37,7 @@ class App extends Component {
 
   render() {
       const sortedSymbols = symbols.sort();
+      console.log(this.props)
       return (
     <div>
         <Particles className="particles"/>
