@@ -21,7 +21,7 @@ export default (pair) => {
 
             return (
                 <div className="text-center col-md-6 row pairName">
-                    <CryptoIcon.default className="iconLogo" />
+                    <CryptoIcon.default className="iconLogo" size={40} />
                     {pairName}
                 </div>
             );

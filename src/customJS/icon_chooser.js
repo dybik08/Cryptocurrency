@@ -15,7 +15,7 @@ export default function(pair){
         switch (pair) {
             case pair:
                 return (
-                        <CryptoIcon.default className="iconLogo" size={30} />
+                        <CryptoIcon.default className="iconLogo" size={50} />
                 );
             default:
                 return "Error! No data available!";
