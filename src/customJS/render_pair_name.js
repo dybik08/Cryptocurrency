@@ -9,7 +9,7 @@ export default (pair) => {
     }else {
         CryptoIcon = require(`react-cryptocoins/dist/icons/${(pair.substring(0,4)).toUpperCase()}`);
     }
-    console.log(CryptoIcon)
+
 
     switch (pair) {
         case pair:

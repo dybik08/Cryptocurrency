@@ -22,4 +22,4 @@ yarn-error.log*
 
 # webstorm and some other shits
 .idea
-*debug.log
+debug.log
