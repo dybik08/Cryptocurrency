@@ -1,16 +1,23 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import {fetchCurrency} from "../actions/fetch_currency_pair_data";
 import { Link } from 'react-router-dom';
 import $ from "jquery";
 import Particles from 'react-particles-js';
-import showCurrencyValue from '../customJS/render_pair_data'
-import renderPairName from '../customJS/render_pair_name'
+import showCurrencyValue from '../components/render_pair_data'
+import renderPairName from '../components/render_pair_name'
+import {number} from "prop-types";
 
+interface IProps {
+    fetchCurrency: any,
+    pickedCurrencyPair: any,
+    match: any
+}
 
-class CurrencyPairDetail extends Component {
+class CurrencyPairDetail extends React.Component<IProps> {
     componentDidMount(){
         this.props.fetchCurrency();
+
         $('.rolldown-list li').each(function () {
             let delay = ($(this).index() / 4) + 's';
             $(this).css({
@@ -22,7 +29,8 @@ class CurrencyPairDetail extends Component {
     }
 
     render(){
-        let pair = this.props.match.params.pair;
+        let pair: string = this.props.match.params.pair;
+
         return(
             <div>
                 <div>

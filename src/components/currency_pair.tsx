@@ -1,9 +1,9 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 
-export default(props) => {
+export default(props: any) => {
 
-    const onPairClick = (pickedPair) =>{
+    const onPairClick = (pickedPair: string): object => {
         return props.pickedCurrencyPair(pickedPair);
     };
 
