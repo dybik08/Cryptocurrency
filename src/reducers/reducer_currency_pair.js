@@ -1,4 +1,4 @@
-import { FETCH_CURRENCY} from '../actions/fetch_currency_pair_data.js';
+import { FETCH_CURRENCY} from '../actions/fetch_currency_pair_data.ts';
 
 export default function(state = [], action){
     switch(action.type) {

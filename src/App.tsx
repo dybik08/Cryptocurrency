@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import './static/App.css';
 import {connect} from 'react-redux';
 import {pickedCurrencyPair} from "./actions/picked_pair";
@@ -9,7 +9,13 @@ import iconChooser from "./customJS/icon_chooser";
 import Particles from 'react-particles-js';
 import symbols from './symbols.json';
 
-class App extends Component {
+interface IProps {
+    fetchCurrency: any,
+    pickedCurrencyPair: any
+}
+
+
+class App extends React.Component<IProps> {
 
     componentDidMount(){
         this.props.fetchCurrency();
@@ -23,8 +29,8 @@ class App extends Component {
         });
     }
 
-  renderCurrencyPairList = (symbol) => {
-      const name = symbol.toUpperCase();
+  renderCurrencyPairList = (symbol: string) => {
+      const name: string = symbol.toUpperCase();
       return (
           <li className="list-group-item " key={symbol} >
             <div className="row" id="rootListItem">
@@ -36,21 +42,19 @@ class App extends Component {
   };
 
   render() {
+      const sortedSymbols: string[] = symbols.sort();
 
-
-
-      const sortedSymbols = symbols.sort();
       return (
-    <div>
-        <Particles className="particles"/>
-      <div className="App" >
-          <h1>Cryptocurrency pairs:</h1>
-        <ul className="list-group col-md-4 rolldown-list" id="myList">
-            {sortedSymbols.map(this.renderCurrencyPairList)}
-        </ul>
-      </div>
-    </div>
-    );
+          <div>
+              <Particles className="particles"/>
+              <div className="App">
+                  <h1>Cryptocurrency pairs:</h1>
+                  <ul className="list-group col-md-4 rolldown-list" id="myList">
+                      {sortedSymbols.map(this.renderCurrencyPairList)}
+                  </ul>
+              </div>
+          </div>
+      );
   }
 }
 

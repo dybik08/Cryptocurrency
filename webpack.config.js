@@ -16,7 +16,7 @@ module.exports = {
     },
     mode: isProduction ? 'production' : 'development',
     resolve: {
-        extensions: ['.tsx', '.js'],
+        extensions: ['.tsx', '.js', '.ts'],
     },
     devServer: {
         contentBase: path.join(__dirname, "dist"),
@@ -37,6 +37,15 @@ module.exports = {
             },
             {
                 test: /\.tsx$/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                    },
+                    'ts-loader'
+                ]
+            },
+            {
+                test: /\.ts$/,
                 use: [
                     {
                         loader: 'babel-loader',
