@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style/App.css';
+import './static/App.css';
 import {connect} from 'react-redux';
 import {pickedCurrencyPair} from "./actions/picked_pair";
 import {fetchCurrency} from "./actions/fetch_currency_pair_data";
@@ -7,7 +7,7 @@ import CurrencyPair from './components/currency_pair';
 import $ from "jquery";
 import iconChooser from "./customJS/icon_chooser";
 import Particles from 'react-particles-js';
-import symbols from './symbols';
+import symbols from './symbols.json';
 
 class App extends Component {
 

@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './style/index.css';
+import * as React from 'react';
+import {render} from 'react-dom';
+import './static/index.css';
 import App from './App';
 import CurrencyPairDetail from './containers/currency_pair_detail';
 import { Provider } from 'react-redux';
@@ -13,7 +13,7 @@ import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-ReactDOM.render(
+render(
     <Provider store={createStoreWithMiddleware(reducers)}>
         <BrowserRouter>
             <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import data from '../tickers';
+import data from '../tickers.json';
 import _ from 'lodash';
 
 export default function (pair) {

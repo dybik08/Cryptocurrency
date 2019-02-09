@@ -1,4 +1,4 @@
-import data from "../tickers";
+import data from "../tickers.json";
 
 
 export const FETCH_CURRENCY = 'FETCH_CURRENCY';

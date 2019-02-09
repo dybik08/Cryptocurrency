@@ -107,7 +107,6 @@ canvas {
 }
 
 .btn-success {
-  width: 120px;
   height: auto;
   justify-content: center;
   line-height: 50px;
@@ -139,7 +138,6 @@ canvas {
 
   }
   .row .btn-success {
-    width: 160px;
     font-size: 20px;
   }
 }

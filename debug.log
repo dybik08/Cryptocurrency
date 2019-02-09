@@ -91,3 +91,6 @@
 [1207/091642.153:ERROR:file_io_win.cc(179)] CreateFile C:\Users\Dybik\AppData\Local\Google\Chrome\User Data\Crashpad\settings.dat: Odmowa dostêpu. (0x5)
 [1207/091642.191:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Potok zosta³ zakoñczony. (0x6D)
 [1207/091642.205:ERROR:file_io_win.cc(179)] CreateFile C:\Users\Dybik\AppData\Local\Google\Chrome\User Data\Crashpad\settings.dat: Odmowa dostêpu. (0x5)
+[0209/170624.700:ERROR:file_io_win.cc(179)] CreateFile C:\Users\Dybik\AppData\Local\Google\Chrome\User Data\Crashpad\settings.dat: Odmowa dostêpu. (0x5)
+[0209/170624.735:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Potok zosta³ zakoñczony. (0x6D)
+[0209/170624.752:ERROR:file_io_win.cc(179)] CreateFile C:\Users\Dybik\AppData\Local\Google\Chrome\User Data\Crashpad\settings.dat: Odmowa dostêpu. (0x5)
