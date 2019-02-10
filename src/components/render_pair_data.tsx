@@ -12,7 +12,7 @@ export default function (pair: string) {
         }
     });
 
-    return selectedPair.map(value => value.map(innerValue =>
-        <li  className="list-group-item currencyPairDetail">{innerValue}</li>
+    return selectedPair.map(value => value.map((innerValue, index) =>
+        <li key={index}  className="list-group-item currencyPairDetail">{innerValue}</li>
     ));
 }
