@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 
-export default (pair) => {
+export default (pair: string) => {
     let CryptoIcon;
-    let pairName = {};
+    let pairName: string = '';
 
     if (pair !== 'dashbtc' && pair !== 'dashusd'){
         CryptoIcon = require(`react-cryptocoins/dist/icons/${(pair.substring(0,3)).toUpperCase()}`);

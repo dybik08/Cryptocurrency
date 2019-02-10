@@ -1,6 +1,6 @@
-import { FETCH_CURRENCY} from '../actions/fetch_currency_pair_data.ts';
+import { FETCH_CURRENCY} from '../actions/fetch_currency_pair_data';
 
-export default function(state = [], action){
+export default function(state = {}, action){
     switch(action.type) {
         case FETCH_CURRENCY:
             return [action.cryptoData];
